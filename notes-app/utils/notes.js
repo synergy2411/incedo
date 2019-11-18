@@ -13,23 +13,36 @@ const loadNotes = () => {
 }
 
 const saveNotes = (notes) => {
-    fs.writeFileSync("./notes.json",JSON.stringify(notes));
+    fs.writeFileSync("./notes.json", JSON.stringify(notes));
     console.log(chalk.green("SUCCESS"))
 }
 
 const add = (title, body) => {
     const allNotes = loadNotes();
+    const duplicatedArray = allNotes.filter(note => note.title === title)
+    if (duplicatedArray.length > 0) {
+        return console.log(chalk.red("Dupllicate Title. Try Again!"))
+    }
     allNotes.push({ title, body });
     saveNotes(allNotes);
 }
 const read = title => {
-    // to read a note from json file based upon the title
+    const allNotes = loadNotes();
+    const duplicatedArray = allNotes.filter(note => note.title === title)
+    console.log(chalk.grey("TItle : ", duplicatedArray[0].title))
+    console.log(chalk.grey("Body : ", duplicatedArray[0].body))
 }
 const remove = title => {
-    // to remove a note from json file based upon the title
+    const allNotes = loadNotes();
+    const duplicatedArray = allNotes.filter(note => note.title !== title);
+    saveNotes(duplicatedArray);
 }
 const list = () => {
-    // to list down all available notes
+    loadNotes().forEach(note => {
+        console.log(chalk.grey("________________________________"))
+        console.log(chalk.grey("TItle : ", note.title))
+        console.log(chalk.grey("Body : ", note.body))
+    })
 }
 
 module.exports = {

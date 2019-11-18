@@ -1,5 +1,5 @@
 const yargs = require("yargs");
-const {add} = require("./utils/notes");
+const {add, read, remove, list} = require("./utils/notes");
 
 // CREATE
 yargs.command({
@@ -18,7 +18,7 @@ yargs.command({
         }
     },
     handler : argv =>{
-        console.log("ADD Arguments : ", argv)
+        // console.log("ADD Arguments : ", argv)
         add(argv.title, argv.body);
     }
 })
@@ -34,7 +34,8 @@ yargs.command({
         }
     },
     handler : argv =>{
-        console.log("READ Arguments : ", argv)
+        // console.log("READ Arguments : ", argv)
+        read(argv.title);
     }
 })
 // LIST
@@ -42,7 +43,8 @@ yargs.command({
     command : "list",
     description : "To list all notes",
     handler : argv =>{
-        console.log("LIST Arguments : ", argv)
+        // console.log("LIST Arguments : ", argv)
+        list()
     }
 })
 // DELETE
@@ -57,7 +59,8 @@ yargs.command({
         }
     },
     handler : argv =>{
-        console.log("REMOVE Arguments : ", argv)
+        // console.log("REMOVE Arguments : ", argv)
+        remove(argv.title);
     }
 })
 
