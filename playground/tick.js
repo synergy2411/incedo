@@ -9,7 +9,7 @@ function shouldContine(){
 }
 
 while(shouldContine()){                     // tick
-
+// run your code here
 }
 
 

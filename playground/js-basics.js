@@ -161,29 +161,82 @@
 
 // node CLI app - functionalities
 
-// node app.js add --title="Grocery" --body="to buy pulses"
-// node app.js remove --title="Grocery"
-// node app.js read --title="Grocery"
-// node app.js list
+
 
 
 // Events :
 
-const EventEmitter= require("events").EventEmitter;
-const stream  = require("stream");
+// const EventEmitter= require("events").EventEmitter;
+// const stream  = require("stream");
 
-console.log(new stream.Stream() instanceof EventEmitter);
-console.log(new stream.Readable() instanceof stream.Stream );
-console.log(new stream.Writable() instanceof stream.Stream );
-console.log(new stream.Duplex() instanceof stream.Stream );
+// // console.log(new stream.Stream() instanceof EventEmitter);
+// // console.log(new stream.Readable() instanceof stream.Stream );
+// // console.log(new stream.Writable() instanceof stream.Stream );
+// // console.log(new stream.Duplex() instanceof stream.Stream );
 
-const emitter = new EventEmitter();
+// const emitter = new EventEmitter();
 
-// emit() : trigger the event
-// on() : register the event handler function
+// // emit() : trigger the event
+// // on() : register the event handler function
 
-emitter.on("foo", () => {
-    console.log("Foo Event Fired!");
-})
+// emitter.on("removeListener",(eventName, listenerFunction) => {
+//     console.log(eventName, listenerFunction.name)
+// })
 
-emitter.emit("foo");
+// emitter.on("newListener", (eventName, listenerFunction) => {
+//     console.log(eventName, listenerFunction.name)
+// })
+
+// function handlerFn(event){
+//     console.log("Handler function", event.name);
+// }
+
+
+// emitter.on("foo", () => {
+//     console.log("Foo Event Fired!");
+//     emitter.removeListener("foo", handlerFn);
+// })
+
+// emitter.on("foo", handlerFn)
+
+// emitter.on("bar", handlerFn)
+
+
+// emitter.emit("foo", {name : "foo"});
+// emitter.emit("foo", {name : "foo"});
+// emitter.emit("bar", {name : "bar"});
+
+
+// console.log(__filename, __dirname);
+
+
+// process.on("exit", (code)=>{
+//     console.log("Exiting...", code)
+// })
+
+
+// process.on("uncaughtException", () => {
+//     console.log(new Error("Something bad haapened!"))
+// })
+
+// nonExistingFunction();
+
+
+// const http = require("http");
+// const server = http.createServer( (request, response) => {
+//     response.writeHead(200);
+//     response.write("Hello Client");
+//     response.end();
+
+// });
+
+// server.listen(9090);
+
+// console.log("Http server running on Port 9090")
+
+
+
+// node app.js add --title="Grocery" --body="to buy pulses"
+// node app.js remove --title="Grocery"
+// node app.js read --title="Grocery"
+// node app.js list
