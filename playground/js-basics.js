@@ -152,9 +152,38 @@
 
 
 
+
+
+
+
+
+
+
 // node CLI app - functionalities
 
 // node app.js add --title="Grocery" --body="to buy pulses"
 // node app.js remove --title="Grocery"
 // node app.js read --title="Grocery"
 // node app.js list
+
+
+// Events :
+
+const EventEmitter= require("events").EventEmitter;
+const stream  = require("stream");
+
+console.log(new stream.Stream() instanceof EventEmitter);
+console.log(new stream.Readable() instanceof stream.Stream );
+console.log(new stream.Writable() instanceof stream.Stream );
+console.log(new stream.Duplex() instanceof stream.Stream );
+
+const emitter = new EventEmitter();
+
+// emit() : trigger the event
+// on() : register the event handler function
+
+emitter.on("foo", () => {
+    console.log("Foo Event Fired!");
+})
+
+emitter.emit("foo");
