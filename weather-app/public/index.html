@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="cardr card-header">
+                <p class="display-4 text-center">
+                    Share Your Location, 
+                </p>
+                <p class="display-4 text-center">
+                    Know Your Weather
+                </p>
+            </div>
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+                        <div class="row">
+                            <div class="col-sm-9 col-md-9">
+                                <div class="form-group">
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="txtLocation" name="txtLocation"
+                                        placeholder="Please enter location...">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-3">
+                                <button onclick="getWeather(event)" class="btn btn-outline-dark btn-lg btn-block">
+                                    Forecast
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div id="showMsg" class="alert alert-primary"></div>
+    </div>
+
+    <script>
+    const getWeather = event => {
+        event.preventDefault();
+        const div = document.getElementById("showMsg");
+        const location = document.getElementById("txtLocation").value;
+        fetch("/weather?address="+location)
+        .then(response => response.json())
+        .then(res => {
+            div.innerHTML = "Hi! At your location " + res.address + 
+                ", it seems the temperature is " + res.result.temperature + "f.\n"
+                + "It is expected " + res.result.summary;
+        });
+    }
+    </script>
+
+</body>
+</html>
