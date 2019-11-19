@@ -12,7 +12,8 @@ app.use((req, res, next)=>{
         return res.send("M2 : Hello from Express!!");
     }
     next();
-})
+},(err, req, res, next)=>{})
+
 app.use((req, res, next)=>{
     console.log("After sending Response...")
     res.send("M3 : Hello from Express!!");
