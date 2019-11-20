@@ -9,6 +9,17 @@ app.get("/", (req, res)=>{
 
 io.on("connection", client => {
     console.log("Client connected");
+    client.emit("acknowledge", {data : "Connected Now"})
+
+    client.on("MsgToServer", ({chatterName, message}) => {
+        console.log("Client Says : " + message);
+        client.emit("MsgToClient", {chatterName : 'Me', message});
+        client.broadcast.emit("MsgToClient", {chatterName, message});
+    })
+
+    client.on("disconnect", () => {
+        console.log("Client disconnected!");
+    })
 })
 
 server.listen(9090, () => {
