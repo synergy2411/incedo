@@ -34,9 +34,8 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-9 col-md-9">
-                                        <input type="text" 
-                                            placeholder="Share your thoughts"
-                                            id="txtMessage" name="txtMessage" class="form-control">
+                                        <input type="text" placeholder="Share your thoughts" id="txtMessage"
+                                            name="txtMessage" class="form-control">
                                     </div>
                                     <div class="col-sm-3 col-md-3">
                                         <button id="btnSend" type="button"
@@ -63,18 +62,17 @@
     <script>
         $(document).ready(() => {
             const chatterName = prompt("Please enter your name")
-            const socket = io.connect("http://localhost:9090");
+            const socket = io.connect("/");
             socket.on("acknowledge", (result) => {
-                console.log("Server says : " + result.data);
                 $(".toast").toast('show', { delay: 3000, animation: true, autohide: true })
             });
+            
             $("#btnSend").on("click", event => {
-                event.preventDefault();
                 let message = $("#txtMessage").val();
-                socket.emit("MsgToServer", {chatterName, message});
+                socket.emit("MsgToServer", { chatterName, message });
                 $("#txtMessage").val('');
             })
-            socket.on("MsgToClient", ({chatterName : cname, message}) => {
+            socket.on("MsgToClient", ({ chatterName: cname, message }) => {
                 $("#taMessage").append(cname + " : " + message + "\n");
             })
         })
