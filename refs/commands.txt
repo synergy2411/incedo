@@ -16,3 +16,4 @@ https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4
 > npm install express hbs --save
 > npm install express jsonwebtoken --save
 > npm install express express-session passport passport-local body-parser --save
+> npm install express socket.io --save
