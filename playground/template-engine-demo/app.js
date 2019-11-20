@@ -3,13 +3,15 @@ const hbs = require("hbs");
 
 const app = express();
 
+// const viewsPath = __dirname+"/template/views";
+// const partialPath = __dirname+"/template/partials";
 
-const viewsPath = __dirname+"/template/views";
-const partialPath = __dirname+"/template/partials";
+// app.set("view engine", "hbs")
+// app.set("views", viewsPath);
+// hbs.registerPartials(partialPath);
 
-app.set("view engine", "hbs")
-app.set("views", viewsPath);
-hbs.registerPartials(partialPath);
+app.set("view engine", "ejs");
+
 
 app.get("/", (req, res)=>{
     res.render("index",{

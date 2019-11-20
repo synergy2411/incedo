@@ -1,5 +1,5 @@
 {
-  "name": "template-engine-demo",
+  "name": "passport-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.7.4",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "hbs": "^4.0.6"
+    "express-session": "^1.17.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
