@@ -12,7 +12,8 @@ MongoClient.connect("mongodb://localhost:27017", {
     _db = mongo.db("incedo_db");
     // insertDoc({"username" : "foo1", "password" : "bar1"})
     // findDoc({"username" : "foo1"})
-    deleteDoc({"username" : "foo1"})
+    // deleteDoc({"username" : "foo1"})
+    updateDoc();
 })
 
 const insertDoc = doc => {
@@ -36,3 +37,11 @@ const deleteDoc = doc => {
     })
 }
 
+const updateDoc = () => {
+    _db.collection("users").updateOne({username : "Foo"}, {
+        $set : {password : "newpassword"}
+    },(err, result) => {
+        if (err) throw new Error(err);
+        console.log("[UPDATED]");
+    })
+}
