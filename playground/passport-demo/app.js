@@ -36,9 +36,10 @@ app.get("/", (req, res)=>{
 })
 
 app.post("/login", passport.authenticate("local", {
-    successRedirect : "/profile",
     failureRedirect : "/"
-}))
+}, (req, res, next)=> {
+    console.log(req.user);
+})
 
 app.get("/profile", (req, res)=>{
     // res.send("USER AUTHORIZED.")
