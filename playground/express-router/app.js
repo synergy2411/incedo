@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use("/static",express.static(__dirname+"/public"));
+
+
 let todos = [];
 
 router.route("/")
@@ -57,7 +60,7 @@ router.route("/:id")
     })
 
     // module.exports = {router};
-app.use("/", router);
+app.use("/todos", router);
 app.listen(9090, () => {
     console.log("Server started....")
 })
