@@ -1,1 +1,9 @@
-<p>user-info works!</p>
+<h2> {{ user.firstName }} {{ user.lastName }}</h2>
+<p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
+<p>Income : {{ user.income }}</p>
+<p>Total Votes : {{ user.vote}}
+
+  <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
+  <input type="number" [(ngModel)]="user.vote">
+
+</p>

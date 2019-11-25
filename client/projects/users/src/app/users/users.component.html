@@ -6,20 +6,12 @@
 
       <div class="row">
         <div class="col-sm-4 col-md-4">
-          <app-user-img [user]="user"></app-user-img>
+          <app-user-img [user]="user"
+            (childEvent)="onMoreInfo($event)"></app-user-img>
 
         </div>
         <div class="col-sm-7 col-md-7">
-          <h2> {{ user.firstName }} {{ user.lastName }}</h2>
-          <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
-          <p>Income : {{ user.income }}</p>
-          <p>Total Votes : {{ user.vote}}
-
-            <input type="number" [value] ="user.vote"
-              (change) = "user.vote = $event.target.value">
-            <input type="number" [(ngModel)] = "user.vote">
-
-          </p>
+          <app-user-info [user]="user" ></app-user-info>
         </div>
       </div>
 

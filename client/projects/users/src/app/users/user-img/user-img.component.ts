@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-img',
@@ -8,6 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UserImgComponent implements OnInit {
 
   @Input() user : any;
+  @Output('childEvent') childEvent = new EventEmitter<any>()
+
+  moreInfo(user : any){
+    console.log(user);
+    this.childEvent.emit(user);
+  }
 
   constructor() { }
 
