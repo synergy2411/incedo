@@ -1,0 +1,26 @@
+<h1>Usres template loaded.</h1>
+
+<ul class="list-unstyled">
+  <li class="card">
+    <div class="card card-body">
+
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <img [src]="user.image" width="150px" height="130px" alt=""
+            class="img-fluid rounded">
+          <br>
+          <button class="btn btn-info btn-block" (click)="onMoreInfo(user)">
+            More Info
+          </button>
+        </div>
+        <div class="col-sm-7 col-md-7">
+          <h2> {{ user.firstName }} {{ user.lastName }}</h2>
+          <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
+          <p>Income : {{ user.income }}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </li>
+</ul>
