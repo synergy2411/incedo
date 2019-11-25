@@ -1,8 +1,8 @@
-// export interface Person{
-//     firstName : string;
-//     lastName : string;
-//     age : number;
-// }
+export interface Person{
+    firstName : string;
+    lastName : string;
+    age : number;
+}
 
 
 function Override(label){
@@ -14,8 +14,8 @@ function Override(label){
     }
 }
 
-class Student {
-    @Override("Bar") fname : string = "Foo";
-}
+// class Student {
+//     // @Override("Bar") fname : string = "Foo";
+// }
 
-console.log(new Student().fname);
+// console.log(new Student().fname);

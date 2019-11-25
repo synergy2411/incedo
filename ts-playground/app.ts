@@ -68,18 +68,38 @@
 // console.log(user.sayHello());  
 
 
-import { Student, MAGIC_NUMBER } from './student';
-import { Person } from './person';
-// let foo = new Student("Foo", "Bar", 32);
+// import { Student, MAGIC_NUMBER } from './student';
+// import { Person } from './person';
+// // let foo = new Student("Foo", "Bar", 32);
 
-let obj : Person = {
-    firstName : "Foo1",
-    lastName : "Bar1",
-    age :34
-}
-let foo1 = new Student(obj)
-console.log(foo1.getName());
+// let obj : Person = {
+//     firstName : "Foo1",
+//     lastName : "Bar1",
+//     age :34
+// }
+// let foo1 = new Student(obj)
+// console.log(foo1.getName());
 
-console.log(MAGIC_NUMBER);
+// console.log(MAGIC_NUMBER);
 
 
+// class Foo{}
+// class Bar{}
+
+// class Bam{
+//     // public foo : Foo;
+//     // constructor(foo: Foo, bar : Bar){
+//     //     this.foo = foo;
+//     // }
+
+//     constructor(public foo : Foo, private bar: Bar){}
+
+//     getName(){
+//         this.
+//     }
+// }
+
+// new Bam(new Foo(), new Bar());
+
+// console.log(new Bam(new Foo(), new Bar()).)
+// console.log(new Bam(new Foo(), new Bar()).)
