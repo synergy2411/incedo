@@ -22,7 +22,8 @@ export class UsersComponent{
     company : 'Microsoft',
     income  : 50000,
     isWorking : true,
-    image : "assets/images/bill.jpg"
+    image : "assets/images/bill.jpg",
+    vote : 120
   }
 
   onMoreInfo(user : any){

@@ -1,4 +1,4 @@
-<h1>Usres template loaded.</h1>
+<h1>Users App</h1>
 
 <ul class="list-unstyled">
   <li class="card">
@@ -6,20 +6,22 @@
 
       <div class="row">
         <div class="col-sm-4 col-md-4">
-          <img [src]="user.image" width="150px" height="130px" alt=""
-            class="img-fluid rounded">
-          <br>
-          <button class="btn btn-info btn-block" (click)="onMoreInfo(user)">
-            More Info
-          </button>
+          <app-user-img [user]="user"></app-user-img>
+
         </div>
         <div class="col-sm-7 col-md-7">
           <h2> {{ user.firstName }} {{ user.lastName }}</h2>
           <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
           <p>Income : {{ user.income }}</p>
+          <p>Total Votes : {{ user.vote}}
+
+            <input type="number" [value] ="user.vote"
+              (change) = "user.vote = $event.target.value">
+            <input type="number" [(ngModel)] = "user.vote">
+
+          </p>
         </div>
       </div>
-
 
     </div>
   </li>
