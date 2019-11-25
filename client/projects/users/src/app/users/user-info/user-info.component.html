@@ -1,4 +1,11 @@
+
+<ng-content select="header"></ng-content>
+
 <h2> {{ user.firstName }} {{ user.lastName }}</h2>
+
+<!-- <ng-content select=".main-content"></ng-content> -->
+<ng-content></ng-content>
+
 <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
 <p>Income : {{ user.income }}</p>
 <p>Total Votes : {{ user.vote}}
@@ -7,3 +14,5 @@
   <input type="number" [(ngModel)]="user.vote">
 
 </p>
+
+<ng-content select="footer"></ng-content>

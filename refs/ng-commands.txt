@@ -2,12 +2,23 @@
 
 > ng --version
 
->> ng new <workspace-name> --createApplication=false
+ng new <workspace-name> --createApplication=false
 > ng new client --createApplication=false
 
 > cd client
 
-> ng generate application <application-name> 
+ng generate application <application-name> 
 > ng generate application users 
 
 > ng serve users -o 
+
+> ng generate component <component-name>
+
+> npm i bootstrap --save
+
+> ng g c users/user-img
+
+
+
+
+

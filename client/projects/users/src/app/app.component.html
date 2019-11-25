@@ -2,6 +2,12 @@
 
   <h1>App Component </h1>
   <br>
-  
-  <app-users></app-users>
+
+  <input type="text" [(ngModel)] = "title">
+
+  <button (click) = "showUser = !showUser">Toggle User</button>
+
+  <div *ngIf="showUser">
+  <app-users [title]="title"></app-users>
+</div>
 </div>
