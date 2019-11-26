@@ -1,15 +1,13 @@
 <ng-content select="header"></ng-content>
 
-<h2> {{ user.firstName }} {{ user.lastName }}</h2>
+<h2> {{ user.firstName | uppercase }} {{ user.lastName | uppercase }}</h2>
 
 <!-- <ng-content select=".main-content"></ng-content> -->
 <ng-content></ng-content>
 
-    <p >Date of Birth : <span [innerHTML]="user.dob"></span></p>
+    <p >Date of Birth : <span [innerHTML]="user.dob | date : 'dd/MMM/yyyy'"></span></p>
 
-
-
-<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
+<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income | currency : 'INR' }}</p>
 
 <!-- Desugar Syntax -->
 

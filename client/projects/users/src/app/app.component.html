@@ -1,6 +1,11 @@
 <div class="container">
 
-  <h1 [ngClass] = "myClasses">App Component </! -->
+  <app-pipe-demo></app-pipe-demo>
+
+  <hr>
+
+  <h1 appHighlight [bgColor] = "'yellow'">App Component </h1>
+  <!-- <h1 [ngClass] = "myClasses" >App Component </! --> -->
   <!-- <h1 [ngStyle] = "myStyles">App Component </h1> -->
   <button (click) = "toggleClasses()">Toggle Classes</button>
   <br>
