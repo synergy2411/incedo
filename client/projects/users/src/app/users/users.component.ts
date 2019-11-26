@@ -1,6 +1,7 @@
 import { Component, OnChanges, Input, SimpleChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from "@angular/core";
 import { User } from '../model/user';
-import { USER_DATA} from '../model/mocks';
+import { DataService } from '../services/data.service';
+
 
 @Component({
     selector : "app-users",
@@ -27,7 +28,7 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   trackByFn(index, user){
     return index;
   }
-  constructor(){
+  constructor(private dataService : DataService){
     // this.user = USER_DATA;
   }
 
@@ -37,7 +38,10 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
 
   ngOnInit(){
     console.log("ngOnInit");
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
+    this.dataService.getData()
+      .subscribe(data => this.users = data);
+
   }
   ngDoCheck(){console.log("DoCheck");}
   ngAfterContentInit(){console.log("ngAfterContentInit");}

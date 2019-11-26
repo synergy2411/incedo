@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    console.log("Contructor")
     this.registerForm = this.fb.group({
       username: this.username,
       password: this.password
@@ -29,10 +28,16 @@ export class RegisterComponent implements OnInit {
   }
 
   hasExclamationMark(input: FormControl) {
-    console.log("Validation")
     if (input.value) {
       const hasExclamation = input.value.indexOf("!") >= 0;
       return hasExclamation ? null : { 'hasExclamation': true }
+    }
+  }
+
+  cnfPassword(input : FormControl){
+    if(input.parent && input.parent.controls){
+      const matchPassword = input.value === input.parent.controls['password'];
+      return matchPassword ? null : {"matchPassword" : false};
     }
   }
 

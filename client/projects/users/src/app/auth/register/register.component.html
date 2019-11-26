@@ -6,23 +6,23 @@
       <input type="email" [formControl]="username" class="form-control" name="username">
 
       <div [hidden]="username.untouched || username.valid">
-        Some error with Username.
+        <br>
+        <h4> Some error with Username. </h4>
         <div [hidden]="!username.hasError('required')">
           <p class="alert alert-danger">Username is mandatory field.</p>
         </div>
         <div [hidden]="!username.hasError('email')">
           <p class="alert alert-danger">Username must have email format .</p>
         </div>
-
       </div>
 
     </div>
     <div class="form-group">
       <label for="password">Password : </label>
       <input type="password" class="form-control" [formControl]="password" name="password">
-
+      <br>
       <div [hidden]="password.untouched || password.valid">
-        Some error with password.
+        <h4>Some error with password.</h4>
         <div [hidden]="!password.hasError('required')">
           <p class="alert alert-danger">password is mandatory field.</p>
         </div>
