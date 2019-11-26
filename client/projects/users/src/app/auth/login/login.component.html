@@ -1,6 +1,6 @@
 <div class="container jumbotron">
   <h1 class="text-center">Login</h1>
-  <form #f = "ngForm">
+  <form #f = "ngForm" (ngSubmit) = "onLogin(f)">
     <div class="form-group">
       <label for="username">Username : </label>
       <input type="email" email
@@ -19,10 +19,10 @@
     </div>
 
     <div class="form-grou">
-      <button type="button"
+      <button type="submit"
         [disabled] = "!f.valid"
         class="btn btn-primary btn-block"
-        (click) = "onLogin(f)">Login</button>
+        >Login</button>
     </div>
 
 

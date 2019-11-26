@@ -11,6 +11,7 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './auth/login/login.component';
     PipeDemoComponent,
     NationalCodePipe,
     FilterPipe,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
