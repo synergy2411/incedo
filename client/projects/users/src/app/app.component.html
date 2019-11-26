@@ -1,6 +1,8 @@
 <div class="container">
 
-  <h1>App Component </h1>
+  <h1 [ngClass] = "myClasses">App Component </! -->
+  <!-- <h1 [ngStyle] = "myStyles">App Component </h1> -->
+  <button (click) = "toggleClasses()">Toggle Classes</button>
   <br>
 
   <input type="text" [(ngModel)] = "title">

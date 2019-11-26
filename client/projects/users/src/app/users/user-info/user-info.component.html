@@ -1,4 +1,3 @@
-
 <ng-content select="header"></ng-content>
 
 <h2> {{ user.firstName }} {{ user.lastName }}</h2>
@@ -6,9 +5,19 @@
 <!-- <ng-content select=".main-content"></ng-content> -->
 <ng-content></ng-content>
 
-<p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
+    <p >Date of Birth : <span [innerHTML]="user.dob"></span></p>
+
+
+
 <p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
-<p>Total Votes : {{ user.vote}}
+
+<!-- Desugar Syntax -->
+
+<!-- <ng-template [ngIf]="user.isWorking">
+  <p>Desugar Syntax</p>
+</ng-template> -->
+
+<p>Total Votes : {{ user.vote}} <br>
   <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
   <input type="number" [(ngModel)]="user.vote">
 </p>
@@ -20,10 +29,8 @@
 <ng-content select="footer"></ng-content>
 
 
-<div [ngSwitch]="">
-  <div *ngSwitchCase="">Output 1</div>
-  <div *ngSwitchCase="">Output 2</div>
-  <div *ngSwitchCase="">Output 3</div>
-  <div *ngSwitchCase="">Output 4</div>
-  <div *ngSwitchDefault>Default</div>
-</div>
+<!-- <div [ngSwitch]="user.firstName">
+  <div *ngSwitchCase="'Bill'">Output 1</div>
+  <div *ngSwitchCase="'Steve'">Output 2</div>
+  <div *ngSwitchDefault>Default Case</div>
+</div> -->
