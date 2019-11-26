@@ -7,12 +7,23 @@
 <ng-content></ng-content>
 
 <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
-<p>Income : {{ user.income }}</p>
+<p *ngIf="user.isWorking; else ElseTemplate">Income : {{ user.income }}</p>
 <p>Total Votes : {{ user.vote}}
-
   <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
   <input type="number" [(ngModel)]="user.vote">
-
 </p>
 
+<ng-template #ElseTemplate>
+  <p>Mr. {{user.lastName}} is not working now!</p>
+</ng-template>
+
 <ng-content select="footer"></ng-content>
+
+
+<div [ngSwitch]="">
+  <div *ngSwitchCase="">Output 1</div>
+  <div *ngSwitchCase="">Output 2</div>
+  <div *ngSwitchCase="">Output 3</div>
+  <div *ngSwitchCase="">Output 4</div>
+  <div *ngSwitchDefault>Default</div>
+</div>

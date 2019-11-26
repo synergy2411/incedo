@@ -1,10 +1,13 @@
 <h1>Users App</h1>
 
+<button (click)="addNewUser()">Add New User</button>
+
 <ul class="list-unstyled">
-  <li class="card">
+  <li class="card" *ngFor="let user of users;trackBy: trackByFn">
     <div class="card card-body">
       <div class="row">
         <div class="col-sm-4 col-md-4">
+          Is this first : {{  isFirst }} / {{ isOdd }} / {{ i }}
           <app-user-img [user]="user"
             (childEvent)="onMoreInfo($event)"></app-user-img>
         </div>
