@@ -25,7 +25,7 @@ export class DataService {
 
   getData(): Observable<User[]> {
     return this.httpClient.get<User[]>
-    ("https://proj-name-b7600.firebaseio.com/userdata.json?auth="+this.authService.getToken())
+    ("https://proj-name-b7600.firebaseio.com/userdata.json")
   }
 }
 
