@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private authService: AuthService) {
     this.registerForm = this.fb.group({
       username: this.username,
       password: this.password
@@ -34,15 +36,19 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  cnfPassword(input : FormControl){
-    if(input.parent && input.parent.controls){
+  cnfPassword(input: FormControl) {
+    if (input.parent && input.parent.controls) {
       const matchPassword = input.value === input.parent.controls['password'];
-      return matchPassword ? null : {"matchPassword" : false};
+      return matchPassword ? null : { "matchPassword": false };
     }
   }
 
   onRegister() {
     console.log(this.registerForm);
+    this.authService.onRegister(
+      this.registerForm.value.username,
+      this.registerForm.value.password
+    )
   }
   ngOnInit() {
   }

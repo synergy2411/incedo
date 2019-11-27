@@ -6,16 +6,15 @@
 <button (click)="addNewUser()">Add New User</button>
 
 <ul class="list-unstyled">
-  <li class="card" *ngFor="let user of users;trackBy: trackByFn">
+  <li class="card" *ngFor="let user of users;index as i; first as isFirst; odd as isOdd; trackBy: trackByFn">
     <div class="card card-body">
       <div class="row">
         <div class="col-sm-4 col-md-4">
           Is this first : {{  isFirst }} / {{ isOdd }} / {{ i }}
-          <app-user-img [user]="user"
-            (childEvent)="onMoreInfo($event)"></app-user-img>
+          <app-user-img [user]="user" (childEvent)="onMoreInfo($event)"></app-user-img>
         </div>
         <div class="col-sm-7 col-md-7">
-          <app-user-info [user]="user" >
+          <app-user-info [user]="user">
             <header>Header Info</header>
             <main class="main-content">Main Content</main>
             <footer>Footer Info</footer>

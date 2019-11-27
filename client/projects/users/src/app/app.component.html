@@ -1,6 +1,8 @@
 <div class="container">
 
-  <!-- <app-register></app-register> -->
+<!-- <app-observable-demo></app-observable-demo> -->
+
+  <app-register></app-register>
 
   <!-- <hr> -->
   <!-- <app-login></app-login> -->
@@ -8,10 +10,8 @@
   <!-- <hr> -->
   <!-- <app-pipe-demo> !-->
 
-  <!-- <hr> -->
-
   <h1 appHighlight [bgColor]="'yellow'">App Component </h1>
-  <!-- <h1 [ngClass] = "myClasses" >App Component </! --> -->
+  <!-- <h1 [ngClass] = "myClasses" >App Component </h1> -->
   <!-- <h1 [ngStyle] = "myStyles">App Component </h1> -->
   <button (click)="toggleClasses()">Toggle Classes</button>
   <br>
@@ -21,6 +21,6 @@
   <button (click)="showUser = !showUser">Toggle User</button>
 
   <div *ngIf="showUser">
-    <app-users [title]="title"></app-users>
+    <!-- <app-users [title]="title"></app-users> -->
   </div>
 </div>
