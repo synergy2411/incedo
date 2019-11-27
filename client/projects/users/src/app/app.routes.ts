@@ -9,6 +9,7 @@ import { LoginGaurdService } from './services/login-gaurd.service';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
+import { GridComponent } from './grid/grid.component';
 
 export const APP_ROUTES: Routes = [{
   path: "",                             // http://localhost:4200
@@ -45,6 +46,9 @@ export const APP_ROUTES: Routes = [{
     component : SpecificationComponent
   }]
 }, {
+  path : "grid",
+  component: GridComponent
+},{
   path: "**",
   redirectTo: "login",
   pathMatch: 'full'

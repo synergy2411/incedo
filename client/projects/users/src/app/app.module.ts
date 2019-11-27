@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AgGridModule } from '@ag-grid-community/angular';
 
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
+import { GridComponent } from './grid/grid.component';
 
 
 @NgModule({
@@ -39,11 +41,12 @@ import { SpecificationComponent } from './product/specification/specification.co
     HeaderComponent,
     ProductComponent,
     OverviewComponent,
-    SpecificationComponent
+    SpecificationComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule, ReactiveFormsModule,
+    FormsModule, ReactiveFormsModule,AgGridModule.withComponents([]),
     HttpClientModule, RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [{
