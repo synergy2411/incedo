@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent implements OnInit {
   showUser: boolean = true;
   myClasses = { 'border-btm': true, 'feature': false }
   myStyles = { 'color': 'green' }
+
+  constructor(public authService : AuthService){}
 
   toggleClasses() {
     this.myClasses['border-btm'] = !this.myClasses['border-btm']

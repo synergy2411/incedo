@@ -1,13 +1,13 @@
 <div class="container">
 
-<!-- <app-observable-demo></app-observable-demo> -->
+  <!-- <app-observable-demo></app-observable-demo> -->
 
   <app-register></app-register>
 
   <!-- <hr> -->
-  <!-- <app-login></app-login> -->
+  <app-login></app-login>
 
-  <!-- <hr> -->
+  <hr>
   <!-- <app-pipe-demo> !-->
 
   <h1 appHighlight [bgColor]="'yellow'">App Component </h1>
@@ -20,7 +20,8 @@
 
   <button (click)="showUser = !showUser">Toggle User</button>
 
-  <div *ngIf="showUser">
-    <!-- <app-users [title]="title"></app-users> -->
+  <!-- <div *ngIf="showUser"> -->
+  <div *ngIf="authService.isAuthenticated()">
+    <app-users [title]="title"></app-users>
   </div>
 </div>

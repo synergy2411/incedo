@@ -16,7 +16,9 @@ import { DataService } from '../services/data.service';
     // }
     // `]
 })
-export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
+export class UsersComponent
+// implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy
+{
   @Input() title : string;
 
   users : User[];
@@ -33,22 +35,22 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   }
 
   ngOnChanges(changes : SimpleChanges){
-    console.log("ngOnChanges", changes);
+    // console.log("ngOnChanges", changes);
   }
 
   ngOnInit(){
-    console.log("ngOnInit");
+    // console.log("ngOnInit");
     // this.users = USER_DATA;
     this.dataService.getData()
       .subscribe(data => this.users = data);
 
   }
-  ngDoCheck(){console.log("DoCheck");}
-  ngAfterContentInit(){console.log("ngAfterContentInit");}
-  ngAfterContentChecked(){console.log("ngAfterContentChecked");}
-  ngAfterViewInit(){console.log("ngAfterViewInit");}
-  ngAfterViewChecked(){console.log("ngAfterViewChecked");}
-  ngOnDestroy(){console.log("ngOnDestroy");}
+  // ngDoCheck(){console.log("DoCheck");}
+  // ngAfterContentInit(){console.log("ngAfterContentInit");}
+  // ngAfterContentChecked(){console.log("ngAfterContentChecked");}
+  // ngAfterViewInit(){console.log("ngAfterViewInit");}
+  // ngAfterViewChecked(){console.log("ngAfterViewChecked");}
+  // ngOnDestroy(){console.log("ngOnDestroy");}
 
   addNewUser(){
     this.users = [{
