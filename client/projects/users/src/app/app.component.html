@@ -1,27 +1,35 @@
 <div class="container">
 
+  <app-header></app-header>
+
+  <br>
+  <br>
+
+  <router-outlet></router-outlet>
+
+</div>
+
   <!-- <app-observable-demo></app-observable-demo> -->
 
-  <app-register></app-register>
+  <!-- <app-register></app-register> -->
 
   <!-- <hr> -->
-  <app-login></app-login>
+  <!-- <app-login></app-login> -->
 
   <hr>
   <!-- <app-pipe-demo> !-->
 
-  <h1 appHighlight [bgColor]="'yellow'">App Component </h1>
+  <!-- <h1 appHighlight [bgColor]="'yellow'">App Component </!--> -->
   <!-- <h1 [ngClass] = "myClasses" >App Component </h1> -->
   <!-- <h1 [ngStyle] = "myStyles">App Component </h1> -->
-  <button (click)="toggleClasses()">Toggle Classes</button>
-  <br>
+  <!-- <button (click)="toggleClasses()">Toggle Classes</button> -->
+  <!-- <br>
 
   <input type="text" [(ngModel)]="title">
 
   <button (click)="showUser = !showUser">Toggle User</button>
-
-  <!-- <div *ngIf="showUser"> -->
+<div *ngIf="showUser">
   <div *ngIf="authService.isAuthenticated()">
     <app-users [title]="title"></app-users>
-  </div>
-</div>
+  </div> -->
+

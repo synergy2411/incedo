@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UsersComponent } from './users/users.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { APP_ROUTES } from './app.routes';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -29,12 +32,13 @@ import { AuthInterceptor } from './services/auth.interceptor';
     FilterPipe,
     LoginComponent,
     RegisterComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,
