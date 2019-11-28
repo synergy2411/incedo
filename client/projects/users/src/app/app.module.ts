@@ -5,6 +5,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
 import { EmployeeModule } from './employee/employee.module';
+import { StoreModule } from '@ngrx/store';
+
 
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
 import { AppComponent } from './app.component';
@@ -26,7 +28,8 @@ import { SpecificationComponent } from './product/specification/specification.co
 import { GridComponent } from './grid/grid.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { counterReducer } from './store/counter.reducer';
+import { CounterComponent } from './counter/counter.component';
 
 
 @NgModule({
@@ -46,11 +49,13 @@ import { environment } from '../environments/environment';
     ProductComponent,
     OverviewComponent,
     SpecificationComponent,
-    GridComponent
+    GridComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
     EmployeeModule,
+    StoreModule.forRoot({counterReducer}),
     FormsModule, ReactiveFormsModule,AgGridModule.withComponents([]),
     HttpClientModule, RouterModule.forRoot(APP_ROUTES, {
       preloadingStrategy : PreloadAllModules
