@@ -6,6 +6,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
 import { EmployeeModule } from './employee/employee.module';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
@@ -55,7 +56,7 @@ import { CounterComponent } from './counter/counter.component';
   imports: [
     BrowserModule,
     EmployeeModule,
-    StoreModule.forRoot({counterReducer}),
+    StoreModule.forRoot({counterReducer}), StoreDevtoolsModule.instrument(),
     FormsModule, ReactiveFormsModule,AgGridModule.withComponents([]),
     HttpClientModule, RouterModule.forRoot(APP_ROUTES, {
       preloadingStrategy : PreloadAllModules

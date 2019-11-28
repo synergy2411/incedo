@@ -31,3 +31,6 @@ export const counterReducer = (state = initialState,
   // }
   // return state;
 }
+
+
+// npm install @ngrx/store-devtools --save
