@@ -27,6 +27,10 @@ export class DataService {
     return this.httpClient.get<User[]>
     ("https://proj-name-b7600.firebaseio.com/userdata.json")
   }
+
+  getRowData(){
+    return this.httpClient.get("https://proj-name-b7600.firebaseio.com/rowdata.json")
+  }
 }
 
 

@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
 import { GridComponent } from './grid/grid.component';
+import { NewEmployeeComponent } from './employee/new-employee/new-employee.component';
 
 export const APP_ROUTES: Routes = [{
   path: "",                             // http://localhost:4200
@@ -47,7 +48,14 @@ export const APP_ROUTES: Routes = [{
   }]
 }, {
   path : "grid",
-  component: GridComponent
+  component: GridComponent,
+  canActivate : [LoginGaurdService]
+},{
+  path : "employee",
+  component : NewEmployeeComponent
+},{
+  path : "lazy",
+  loadChildren : "./lazy/lazy.module#LazyModule"                   // "path/to/module/filname#ModuleClassName"
 },{
   path: "**",
   redirectTo: "login",

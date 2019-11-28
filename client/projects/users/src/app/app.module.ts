@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AgGridModule } from '@ag-grid-community/angular';
+import { EmployeeModule } from './employee/employee.module';
 
 import { NationalCodePipe } from 'projects/users/pipes/nationalcode.pipe';
 import { AppComponent } from './app.component';
@@ -23,6 +24,9 @@ import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
 import { GridComponent } from './grid/grid.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 
 
 @NgModule({
@@ -46,8 +50,11 @@ import { GridComponent } from './grid/grid.component';
   ],
   imports: [
     BrowserModule,
+    EmployeeModule,
     FormsModule, ReactiveFormsModule,AgGridModule.withComponents([]),
-    HttpClientModule, RouterModule.forRoot(APP_ROUTES)
+    HttpClientModule, RouterModule.forRoot(APP_ROUTES, {
+      preloadingStrategy : PreloadAllModules
+    }), ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
     provide : HTTP_INTERCEPTORS,
