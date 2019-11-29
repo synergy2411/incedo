@@ -1,0 +1,14 @@
+> npm init -y
+> npm install express --save
+> npm install nodemon -g
+> npm ls -g --depth 0
+> nodemon filename.js
+> npm install cookie-session --save
+> npm install connect-timeout --save
+> npm install body-parser --save
+> npm install esm --save
+> npm install express hbs --save
+> npm install express jsonwebtoken --save
+> npm install express express-session passport passport-local body-parser --save
+> npm install express socket.io --save
+> npm install heroku -g
